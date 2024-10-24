@@ -210,3 +210,163 @@ for x in range(5):
     print(paises[x],poblaciones[x])    
 
 """
+
+# sumando listas con componentes de tipo lista
+
+#ejemplo 41
+
+# primera manera:
+
+""""
+lista = [[1,2,3,4,5],[1,2,3,4,5]]
+
+suma1 = lista[0][0] + lista[0][1] + lista[0][2] + lista[0][3] + lista[0][4]
+
+suma2 = lista[1][0] + lista[1][1] + lista[1][2] + lista[1][3] + lista[1][4]
+
+print('La suma de elementos del elemento N°1 es :', suma1)
+print('La suma de elementos del elemento N°2 es :', suma2)
+
+print('-----------------------------------------------------')
+
+#segunda manera:
+
+suma3 = 0
+suma4 = 0
+
+for x in range(len(lista[0])):
+    suma3 += lista[0][x]
+
+for x in range(len(lista[1])):
+    suma4 += lista[1][x]
+
+print(suma3)
+print(suma4)
+
+
+print ('--------------------------------------------------------')
+
+suma5 = 0
+
+
+for k in range(len(lista)):
+    suma5 = 0
+    for x in range(len(lista[k])):
+        suma5 += lista[k][x]
+    print(suma5)
+
+    
+"""
+
+
+#ejemplo 42
+""""
+lista = [[1],[1,2],[1,2,3],[1,2,3,4],[1,2,3,4,5]]
+
+suma = 0
+
+for k in range(len(lista)):
+    for x in range(len(lista[k])):
+        suma += lista[k][x]
+    
+print(suma)
+
+"""
+
+""""
+#desempeño54
+lista=[[100,7,85,8], [4,8,56,25], [67,89,23,1], [78,56]]
+
+print(lista)
+for k in range(len(lista)):
+    for x in range(len(lista[k])):
+        if (lista[k][x]>50):
+            lista[k][x] = 0
+
+
+print(lista)
+
+"""
+
+#desempeño55
+""""
+lista=[[4,12,5,66], [14,6,25], [3,4,5,67,89,23,1], [78,56]]
+
+print(lista)
+
+
+for i in range(len(lista)):
+    for x in range(len(lista[0])):
+        if (lista[0][x]>10):
+            lista[0][x] = 0
+            print('Se modifico la lista')
+
+print(lista)
+
+"""
+
+# desempeño56
+"""""
+lista = [[9,8,7,6,5],[5,6,7,8,9],[1,2,3,4],[4,3,2,1]]
+
+print(lista[3])
+
+"""
+
+# carga por teclado de componentes tipo lista
+
+# ej 43 Alumnos y notas cargados por teclado 
+"""
+nombres = []
+notas = []
+
+for x in range(3):
+    nombre = input('Ingrese el nombre del alumno: ')
+    nombres.append(nombre)
+    nota1 = float(input('Ingrese la primera nota del alumno: '))
+    nota2 = float(input('Ingrese la segunda nota del alumno: '))
+    notas.append([nota1,nota2])
+
+for x in range(3):
+    print('Nombre: ',nombres[x],'| Notas :', notas[x][0], notas[x][1])
+    
+"""
+
+#ejemplo44
+
+# cargar(3): nombre, sueldo, cobrado en 3 meses
+
+# a| Realizar la carga de los nombres de empleados y los tres sueldos por cada empleado. 
+# b| Generar una lista que contenga el ingreso acumulado en sueldos en los últimos 3 meses para cada empleado. 
+# c|  Mostrar por pantalla el total pagado en sueldos a cada empleado en los últimos 3 meses d|  Obtener el nombre del empleado que tuvo el mayor ingreso acumulado
+
+nombres = []
+sueldos = []
+sumas = []
+
+for x in range(3):
+    nombre = input('Ingrese el nombre del empleado ')
+    nombres.append(nombre)
+    sueldo1 = float(input('Ingrese el sueldo cobrado hace 3 meses '))
+    sueldo2 = float(input('Ingrese el sueldo cobrado hace 2 meses '))
+    sueldo3 = float(input('Ingrese el sueldo cobrado hace 1 mes '))
+    sueldos.append([sueldo1,sueldo2,sueldo3])
+
+suma = 0
+for k in range(len(sueldos)):
+    suma = 0
+    for x in range(len(sueldos[k])):
+        suma += sueldos[k][x]
+    sumas.append(suma)
+
+for x in range(3):
+    print('Las sumas totales de sueldos de 3 meses son: ', nombres[x], sumas[x])
+    
+posmayor = 0
+mayor = sumas[0]
+for x in range(1,3):
+    if sumas[x]>mayor:
+        posmayor=x
+        mayor = sumas[x]
+
+print('Empleado con mayores ingresos en los ultimos 3 meses es: ', nombres[posmayor], ' con un ingreso de: ', mayor)
