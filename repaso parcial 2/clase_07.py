@@ -340,6 +340,7 @@ for x in range(3):
 # b| Generar una lista que contenga el ingreso acumulado en sueldos en los últimos 3 meses para cada empleado. 
 # c|  Mostrar por pantalla el total pagado en sueldos a cada empleado en los últimos 3 meses d|  Obtener el nombre del empleado que tuvo el mayor ingreso acumulado
 
+""""
 nombres = []
 sueldos = []
 sumas = []
@@ -370,3 +371,65 @@ for x in range(1,3):
         mayor = sumas[x]
 
 print('Empleado con mayores ingresos en los ultimos 3 meses es: ', nombres[posmayor], ' con un ingreso de: ', mayor)
+
+"""
+
+# ejemplo 45
+"""
+lista = []
+elementos = []
+cantidad = int(input('Ingrese la cantidad de elementos a crear en la lista: '))
+cantidad_int = int(input('Ingrese la cantidad de elementos que desea en cada elemento de la lista mayor: '))
+
+for x in range(cantidad):
+    elementos = []
+    for k in range(cantidad_int):
+        valor = int(input('Ingrese un valor entero'))
+        elementos.append(valor)
+        print(elementos)
+
+    lista.append(elementos)
+
+print(lista)
+
+
+suma = 0
+for k in range(len(lista)):
+    for x in range(len(lista[k])):
+        suma = suma + lista[k][x]
+
+print (suma)
+
+"""
+
+#ejemplo 46
+
+# lista1 = [[padre,madre],[padre,madre],[padre,madre]]
+# lista2 = [[hijo1,hija1],[hija2,hijo2],[hijo3,hija3]]
+
+padres = []
+hijos = []
+cantidad_hijos = 0
+
+
+for x in range(3):
+    nombre_padre = input('Ingrese el nombre del padre: ')
+    nombre_madre = input('Ingrese el nombre de la madre: ')
+    padres.append([nombre_padre,nombre_madre])
+    cantidad_hijos = int(input('Ingrese la cantidad de hijos de la familia: '))
+
+    hijos.append([]) #genera una lista vacia para que cada familia pueda tener su lista de hijos 
+    for k in range(cantidad_hijos):
+        nombre_hijo = input('Ingrese el nombre del hijo/hija')
+        hijos[-1].append(nombre_hijo)
+
+print('Listado con: Padre, madre e hijos: ')
+for x in range(3):
+    print('Padre: ', padres[x][0])
+    print('Madre: ', padres[x][1])
+    for k in range(len(hijos[x])):
+        print('Hijos: ', hijos[x][k])
+
+print('Nombre del padre con la cantidad de hijos: ')
+for x in range(3):
+    print('Padre: ', padres[x][0], '| Cantidad de hijos: ', len(hijos[x]))
