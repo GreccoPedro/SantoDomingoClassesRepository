@@ -406,7 +406,7 @@ print (suma)
 
 # lista1 = [[padre,madre],[padre,madre],[padre,madre]]
 # lista2 = [[hijo1,hija1],[hija2,hijo2],[hijo3,hija3]]
-
+"""
 padres = []
 hijos = []
 cantidad_hijos = 0
@@ -433,3 +433,36 @@ for x in range(3):
 print('Nombre del padre con la cantidad de hijos: ')
 for x in range(3):
     print('Padre: ', padres[x][0], '| Cantidad de hijos: ', len(hijos[x]))
+
+"""
+
+#desempeño 57
+
+paises = []
+temps = []
+
+for x in range(4):
+    pais = input('Ingrese el nombre del pais: ')
+    paises.append(pais)
+
+    temp1 = float(input('Ingrese la temperatura media del mes N°1 : '))
+    temp2 = float(input('Ingrese la temperatura media del mes N°2 : '))
+    temp3 = float(input('Ingrese la temperatura media del mes N°3 : '))
+
+    temps.append([temp1,temp2,temp3])
+
+print('Nombre del pais y las tres temperaturas mensuales: ')
+for x in range(4):
+    print('Nombre: ', paises[x])
+    for k in range(len(temps[x])):
+        print(temps[x][k])
+
+suma = 0
+
+for x in range(4):
+    
+    for k in range(len(temps[x])):
+        suma += temps[x][k]
+    promedio = suma / len(temps)
+    print('La temperatura media trimestral de ', paises[x], ' es: ', promedio)
+
