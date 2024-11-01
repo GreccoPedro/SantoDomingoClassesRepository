@@ -59,7 +59,8 @@ print('Se imprime la segunda tupla que se le copio a la lista: ',tupla_fecha2)
 
 """
 
-# desempeño 76
+# desempeño 72
+""""
 lista = []
 for x in range(5):
     num = 0
@@ -67,6 +68,7 @@ for x in range(5):
     lista.append(num)
 
 """""
+"""
 for k in range(4):
     for x in range(4-k):
         if lista[x] > lista[x+1]:
@@ -91,6 +93,7 @@ tupla2 = tuple(lista2)
 
 print('Impresion de tupla de lista ordenada de mayor a menor: ', tupla2)
 """
+"""
 
 tupla = tuple(lista)
 def mayor_menor(tupla):
@@ -107,3 +110,25 @@ def mayor_menor(tupla):
 
 mayor , menor = mayor_menor(lista)
 print('El menor de la tupla de la lista es: ', menor, ' y el mayor es: ',mayor)
+"""
+
+# desempeño 73
+"""
+tupla = ()
+def carga_info():
+    nombre = input('Ingrese el nombre del empleado: ')
+    sueldo = float(input('Ingrese el sueldo del empleado: $'))
+    return (nombre,sueldo)
+
+def mayor_sueldo(empleado1, empleado2):
+    if empleado1[1]>empleado2[1]:
+        print(empleado1[0], ' tiene mayor sueldo.')
+    else:
+        print(empleado2[0], ' tiene mayor sueldo.')
+
+empleado1 = carga_info()
+empleado2 = carga_info()
+
+mayor_sueldo(empleado1,empleado2)
+"""
+
